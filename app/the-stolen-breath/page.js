@@ -9,7 +9,7 @@ export default async function Page() {
 
   return (
     <Wrapper bg="#ffffff">
-      <section className="md:mx-[1.5rem] xl:mx-[3.5rem]">
+      <section className="md:mx-[1.5rem] xl:mx-[3.5rem] font-satoshi">
         <BookHerosection bookStats={stats} />
       </section>
     </Wrapper>

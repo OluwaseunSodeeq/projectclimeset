@@ -35,7 +35,7 @@ export default function HerosecRightCard() {
   const current = testimonials[index];
 
   return (
-    <div className="relative h-[400px] md:h-[40rem] xl:h-[40rem] w-full md:w-[45%] xl:w-[44rem] 2xl:w-[46rem] xl:rounded-b-[1.2rem]">
+    <div className="relative font-satoshi h-[400px] md:h-[40rem] xl:h-[40rem] w-full md:w-[45%] xl:w-[44rem] 2xl:w-[46rem] xl:rounded-b-[1.2rem]">
       {/* BACKGROUND LAYER (NON-INTERACTIVE) */}
       <div className="hidden md:block absolute inset-0 z-0 rounded-[1.2rem] overflow-hidden pointer-events-none">
         <ImageOptimizer

@@ -30,7 +30,7 @@ const images = [
 
 export default function GalleryHeroSection() {
   return (
-    <section className="px-4 md:px-10 pb-12 lg:mx-[2.5rem] ">
+    <section className="px-4 md:px-10 pb-12 lg:mx-[2.5rem] font-satoshi ">
       {/* Header */}
       <div className=" relative font-satoshi text-center lg:w-[1000px] 2xl:w-[1200px] mx-auto mt-5 md:mt-10 lg:mb-5 pb-15 md:pb-20 flex md:flex-col flex-wrap justify-center lg:gap-0">
         <span className="text-[33px] md:text-[40px] lg:text-[55px] 2xl:text-[70px] font-bold text-black mb-2">

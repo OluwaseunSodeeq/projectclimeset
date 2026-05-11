@@ -10,7 +10,7 @@ import MeetTheTeamImages from "../components/MeetTheTeamImages";
 export default function Page() {
   return (
     <Wrapper>
-      <div className="md:px-[1.5rem] xl:px-[3.5rem]">
+      <div className="md:px-[1.5rem] xl:px-[3.5rem] font-satoshi">
         <AboutHeroSection />
         {/* <AboutCards /> */}
         <MeetTheTeamImages />

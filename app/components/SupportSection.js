@@ -23,7 +23,7 @@ const cardsData = [
 
 export default function SupportSection() {
   return (
-    <main className="bg-main-bg h-auto mb-7 lg:mb-10 ">
+    <main className="bg-main-bg h-auto mb-7 lg:mb-10 font-satoshi">
       <section className="max-w-[1200px] mx-auto px-4 py-6">
         {/* INTRO TEXT */}
         <p className="text-center text-[20px] md:text-[30px] font-bold text-black lg:px-70 mb-5">

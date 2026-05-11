@@ -10,7 +10,7 @@ export default function AboutHeroSection() {
     "But today, Climeset has expanded far beyond its original scope, evolving into a dedicated 18-member team of creatives, techies, and managers.",
   ];
   return (
-    <div className="w-full flex flex-col gap-16 px-4 lg:px-0 py-8.5">
+    <div className="w-full flex flex-col gap-16 px-4 lg:px-0 py-8.5 font-satoshi">
       <div className="w-full bg-white overflow-hidden ">
         {/* <div className="relative 80-full h-72 md:h-[420px] xl:h-[650px] 2xl:h-[860px]"> */}
         <div className="relative w-full h-80 md:h-[420px] xl:h-[650px] 2xl:h-[860px] ">

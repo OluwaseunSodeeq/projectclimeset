@@ -5,7 +5,7 @@ export default function DonationCard({ setShowDonation, handleCopy, copied }) {
   return (
     <div
       onClick={() => setShowDonation(false)}
-      className="fixed inset-0 bg-black/40 backdrop-blur-sm z-40 flex items-center justify-center px-4"
+      className="fixed font-satoshi inset-0 bg-black/40 backdrop-blur-sm z-40 flex items-center justify-center px-4"
     >
       <div
         onClick={(e) => e.stopPropagation()}

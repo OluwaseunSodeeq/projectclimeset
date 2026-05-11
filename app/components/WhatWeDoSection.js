@@ -27,7 +27,7 @@ export default function WhatWeDoSection() {
 
   return (
     // <Wrapper>
-    <div className="relative mt-[3rem] md:mt-[7rem] pb-[3.5rem] md:pb-[5rem] xl:px-[3.5rem] py-0">
+    <div className="relative font-satoshi mt-[3rem] md:mt-[7rem] pb-[3.5rem] md:pb-[5rem] xl:px-[3.5rem] py-0">
       <div className="font-satoshi text-left ml-5 md:ml-0 md:text-center flex gap-0 flex-col">
         <span className="font-normal text-dark-green md:text-black text-[1.3rem] md:text-[2.3rem] p-0">
           What We Do

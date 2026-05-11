@@ -79,7 +79,7 @@ export default function TestimonialSection() {
   // Prevent hydration mismatch
   if (!mounted) {
     return (
-      <section className="relative w-full pt-8 pb-12 overflow-hidden px-4 xl:px-14">
+      <section className="relative font-satoshi  w-full pt-8 pb-12 overflow-hidden px-4 xl:px-14">
         <div className="overflow-hidden">
           <div className="flex">
             {testimonialArray.map((t, i) => (
@@ -99,7 +99,7 @@ export default function TestimonialSection() {
   // const goPrev = () => setCurrentIndex((prev) => Math.max(prev - 1, 0));
 
   return (
-    <section className="relative w-full pt-8 pb-12 overflow-hidden px-4 xl:px-14">
+    <section className="relative font-satoshi w-full pt-8 pb-12 overflow-hidden px-4 xl:px-14">
       <div className="relative">
         {/* Prev (hidden on small screens) */}
         {/* <button

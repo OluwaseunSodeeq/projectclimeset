@@ -21,7 +21,7 @@ export default function HerosecLeftCard() {
   const textColor = "#012f25";
 
   return (
-    <div className="relative w-full 2xl:max-w-[36rem] xl:w-[33rem] xl:h-[40rem] md:h-[40rem] md:w-[45%] bg-dark-green text-main-bg pt-[4.2rem] md:pt-[3rem] xl:pt-[7rem] px-[1rem]  xl:px-[3.5rem] pb-0 xl:pb-[2rem] md:rounded-[1.2rem]">
+    <div className="relative font-satoshi w-full 2xl:max-w-[36rem] xl:w-[33rem] xl:h-[40rem] md:h-[40rem] md:w-[45%] bg-dark-green text-main-bg pt-[4.2rem] md:pt-[3rem] xl:pt-[7rem] px-[1rem]  xl:px-[3.5rem] pb-0 xl:pb-[2rem] md:rounded-[1.2rem]">
       <h1 className="font-satoshi text-[48px] lg:text-[40px] text-main-bg mb-4 md:font-medium leading-[1] lg:text-nowrap">
         <span className=""> Building Green </span>
         <span className="text-[84px] lg:text-[40px] text-yellow md:text-main-bg md:text-[48px] xl:[40px] font-bold md:font-medium">

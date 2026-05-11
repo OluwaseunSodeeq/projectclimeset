@@ -35,7 +35,7 @@ export default function HowWeWorkSection() {
   ];
 
   return (
-    <div className="px-[1rem] xl:px-[3.5rem] bg-dark-green relative">
+    <div className="px-[1rem] xl:px-[3.5rem] bg-dark-green relative font-satoshi">
       <div className="flex flex-col md:flex-row md:justify-between xl:px-4 pb-3 pt-[3rem] md:pt-[5rem]">
         <div className="font-satoshi text-main-bg text-[25px] xl:text-4xl">
           <h4 className="font-bold">Wanna see how we work?</h4>
