@@ -84,7 +84,7 @@ function Navbody({ bg, textColor }) {
                     src="/minilogo.svg"
                     alt="minilogo"
                     className="object-contain pr-2"
-                    quality={100}
+                    quality={75}
                   />
                 )}
               </li>

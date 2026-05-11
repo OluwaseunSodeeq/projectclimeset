@@ -43,10 +43,10 @@ export default function WhatWeDoSection() {
         </div>
       </div>
 
-      <div className="mt-[1.5rem] md:mt-[4rem] ">
-        <div className="flex items-center flex-col-reverse md:gap-x-8 xl:gap-[2.8rem]  md:justify-center md:flex-row ">
+      <div className="mt-[1.5rem] w-full md:mt-[4rem] ">
+        <div className="flex items-center flex-col-reverse md:gap-x-8 xl:gap-[2.8rem]  md:justify-center md:flex-row md:px-4 xl:px-0">
           <div
-            className="bg-cover bg-center bg-no-repeat gradient-border w-[360px] h-[300px] xl:w-[39.6rem] xl:h-[17rem] relative mt-5 md:mt-0 rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="bg-cover bg-center bg-no-repeat gradient-border w-[90%] md:w-[50%] h-[300px] xl:w-[33.3rem] xl:h-[17rem] relative rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             style={{
               backgroundImage: "url('/whatwedo01.jpg')",
             }}
@@ -72,10 +72,10 @@ export default function WhatWeDoSection() {
         </div>
       </div>
 
-      <div className="flex items-center justify-center flex-col md:flex-row gap-y-5 md:gap-x-7 xl:gap-x-6 mt-5 xl:mt-0 mb-5 xl:mb-0 ">
-        <div className="flex items-center xl:gap-[2.8rem]">
+      <div className="flex items-center justify-center flex-col md:flex-row  gap-y-5 md:gap-x-7 xl:gap-x-6 mt-5 xl:mt-0 mb-5 xl:mb-0 md:px-4 xl:px-0">
+        <div className="flex items-center justify-center md:justify-start xl:gap-[2.8rem] w-[90%] xl:w-[33.3rem]">
           <div
-            className="bg-cover bg-center bg-no-repeat gradient-border w-[360px] h-[300px] xl:w-[33.3rem] xl:h-[17rem] relative rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
+            className="bg-cover bg-center bg-no-repeat  gradient-border w-full  h-[300px]  xl:h-[17rem] relative rounded-lg transition-all duration-300 hover:shadow-xl hover:-translate-y-1"
             style={{
               backgroundImage: "url('/whatwedo.png')",
             }}
@@ -90,13 +90,13 @@ export default function WhatWeDoSection() {
           </div>
         </div>
 
-        <div className=" w-[360px]  h-[300px] xl:w-[21rem] xl:h-[17rem] relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
+        <div className=" w-[90%] gradient-border  h-[300px] xl:w-[21rem] xl:h-[17rem] relative rounded-lg overflow-hidden transition-all duration-300 hover:shadow-xl hover:-translate-y-1">
           <Image
             src="/hero22.png"
             alt="cover"
             fill
             className="object-cover scale-[1.01]"
-            quality={100}
+            quality={75}
             priority
           />
 
