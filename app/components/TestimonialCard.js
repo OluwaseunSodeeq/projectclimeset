@@ -1,7 +1,7 @@
 "use client";
 import React from "react";
 import Image from "next/image";
-import { Star, Quote } from "lucide-react";
+import { Star } from "lucide-react";
 
 export default function TestimonialCard({ testimonial }) {
   const { rating, text, name, image, title } = testimonial;

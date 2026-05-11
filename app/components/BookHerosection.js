@@ -6,7 +6,6 @@ import DonationCard from "./DonationCard";
 import StatsCards from "./BookStatsCards";
 import GrowthCard from "./GrowthCard";
 import { BoldButton } from "./Button";
-import ImageOptimizer from "./ImageOptimizer";
 
 export default function BookHerosection({ bookStats }) {
   const { sold_copies, a_copy_amount } = bookStats;

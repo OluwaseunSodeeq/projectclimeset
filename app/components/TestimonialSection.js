@@ -2,7 +2,6 @@
 "use client";
 import React, { useEffect, useState } from "react";
 import TestimonialCard from "./TestimonialCard";
-import { title } from "framer-motion/client";
 
 export default function TestimonialSection() {
   const testimonialArray = [
@@ -35,32 +34,32 @@ export default function TestimonialSection() {
       title: "GDFT Student",
     },
   ];
+  const getCardPreview = () => {
+    if (typeof window === "undefined") return 1;
+    if (window.innerWidth < 640) return 1;
+    if (window.innerWidth < 1024) return 2;
+    return 3;
+  };
 
-  const [cardsPerView, setCardsPerView] = useState(3);
+  const [cardsPerView, setCardsPerView] = useState(getCardPreview);
   const [currentIndex, setCurrentIndex] = useState(0);
 
-  // Update cardsPerView on resize (Tailwind breakpoints: sm=640, lg=1024)
   useEffect(() => {
     const update = () => {
-      if (window.innerWidth < 640) setCardsPerView(1);
-      else if (window.innerWidth < 1024) setCardsPerView(2);
-      else setCardsPerView(3);
+      setCardsPerView(getCardPreview());
     };
-    update();
+    // update();
     window.addEventListener("resize", update);
     return () => window.removeEventListener("resize", update);
   }, []);
 
-  // Derived
   const maxIndex = Math.max(0, testimonialArray.length - cardsPerView);
-  const slideWidthPercent = 100 / cardsPerView; // each slide's percentage width
+  const slideWidthPercent = 100 / cardsPerView;
 
-  // If cardsPerView changes, clamp currentIndex so we never go past the last page
   useEffect(() => {
     setCurrentIndex((ci) => Math.min(ci, maxIndex));
   }, [cardsPerView, maxIndex]);
 
-  // Auto-play (optional). Keeps last page visible instead of wrapping to 0.
   useEffect(() => {
     const id = setInterval(() => {
       setCurrentIndex((prev) => (prev < maxIndex ? prev + 1 : 0));
