@@ -2,6 +2,7 @@
 import Image from "next/image";
 import { SquareButton, SquareButtonBigSize } from "./SquareButton";
 import Link from "next/link";
+import { useEffect, useState } from "react";
 
 const items = [
   {
@@ -43,8 +44,21 @@ const items = [
 ];
 
 export default function Join() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+  // className={`  px-4 md:px-10 pb-12 lg:mx-[2.5rem] font-satoshi ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-opacity duration-700`}
+
   return (
-    <section className="w-full md:px-4 pt-10 pb-15 md:pt-16 md:pb-18 font-satoshi">
+    <section
+      className={`w-full md:px-4 pt-10 pb-15 md:pt-16 md:pb-18 font-satoshi ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-opacity duration-700`}
+    >
       {/* Header */}
       <div className="text-center mb-14">
         <Link

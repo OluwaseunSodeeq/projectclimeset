@@ -1,4 +1,6 @@
-import Button from "./Button";
+"use client";
+import { useEffect, useState } from "react";
+// import Button from "./Button";
 import SupportCard from "./SupportCard";
 const cardsData = [
   {
@@ -22,9 +24,20 @@ const cardsData = [
 ];
 
 export default function SupportSection() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <main className="bg-main-bg h-auto mb-7 lg:mb-10 font-satoshi">
-      <section className="max-w-[1200px] mx-auto px-4 py-6">
+      <section
+        className={`max-w-[1200px] mx-auto px-4 py-6 ${loaded ? "opacity-100 translate-x-0" : "opacity-0 -translate-x-10"} transition-opacity delay-200 duration-700`}
+      >
         {/* INTRO TEXT */}
         <p className="text-center text-[20px] md:text-[30px] font-bold text-black lg:px-70 mb-5">
           We don’t just need donations, we need partners in hope:

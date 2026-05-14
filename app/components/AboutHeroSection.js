@@ -1,8 +1,19 @@
+"use client";
 import Image from "next/image";
 import ButtonText from "./ButtonText";
 import { RightGradientDashedFadeLine } from "./GradientLines";
+import { useState, useEffect } from "react";
 
 export default function AboutHeroSection() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   const paragraphs = [
     "It all started with the rain. The kind that floods roads gets people walking in pools of water above ankle-level. It nearly caused one of our team members to miss an important exam at school.",
     "That day, our founder, Abeedah, realised that climate change wasn’t a distant threat; it was a personal reality affecting her and her community’s access to education.",
@@ -10,7 +21,9 @@ export default function AboutHeroSection() {
     "But today, Climeset has expanded far beyond its original scope, evolving into a dedicated 18-member team of creatives, techies, and managers.",
   ];
   return (
-    <div className="w-full flex flex-col gap-16 px-4 lg:px-0 py-8.5 font-satoshi">
+    <div
+      className={`w-full flex flex-col gap-16 px-4 lg:px-0 py-8.5 font-satoshi ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-all duration-700 delay-200 ease-in-out `}
+    >
       <div className="w-full bg-white overflow-hidden ">
         {/* <div className="relative 80-full h-72 md:h-[420px] xl:h-[650px] 2xl:h-[860px]"> */}
         <div className="relative w-full h-80 md:h-[420px] xl:h-[650px] 2xl:h-[860px] ">

@@ -3,6 +3,7 @@
 import Masonry from "react-masonry-css";
 import Image from "next/image";
 import WorkshopCard from "./WorkshopCard";
+import { useEffect, useState } from "react";
 
 const breakpointColumnsObj = {
   default: 3,
@@ -29,10 +30,22 @@ const images = [
 ];
 
 export default function GalleryHeroSection() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <section className="px-4 md:px-10 pb-12 lg:mx-[2.5rem] font-satoshi ">
       {/* Header */}
-      <div className=" relative font-satoshi text-center lg:w-[1000px] 2xl:w-[1200px] mx-auto mt-5 md:mt-10 lg:mb-5 pb-15 md:pb-20 flex md:flex-col flex-wrap justify-center lg:gap-0">
+      <div
+        className={`relative font-satoshi text-center lg:w-[1000px] 2xl:w-[1200px] mx-auto mt-5 md:mt-10 lg:mb-5 pb-15 md:pb-20 flex md:flex-col flex-wrap justify-center lg:gap-0  ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-opacity duration-700`}
+      >
         <span className="text-[33px] md:text-[40px] lg:text-[55px] 2xl:text-[70px] font-bold text-black mb-2">
           Browse through snapshots from
         </span>

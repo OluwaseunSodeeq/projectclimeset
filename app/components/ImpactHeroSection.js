@@ -1,4 +1,6 @@
 // import Image from "next/image";
+"use client";
+import { useState, useEffect } from "react";
 import Button from "./Button";
 import ImpactCard from "./ImpactCard";
 import Link from "next/link";
@@ -32,9 +34,20 @@ const lastImapactCard = {
 };
 
 export default function ImpactHeroSection() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   return (
     <div>
-      <div className="w-full  py-20 px-4">
+      <div
+        className={`w-full  py-20 px-4 ${loaded ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-200 ease-in-out`}
+      >
         <div className="max-w-7xl mx-auto">
           {/* Heading */}
           <h2 className="max-w-3xl 2xl:max-w-[1100px] mx-auto text-center text-black font-bold text-[24px] md:text-[40px] lg:text-[50px] 2xl:text-[70px]  leading-tight">

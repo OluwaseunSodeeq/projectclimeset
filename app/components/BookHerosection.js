@@ -8,6 +8,15 @@ import GrowthCard from "./GrowthCard";
 import { BoldButton } from "./Button";
 
 export default function BookHerosection({ bookStats }) {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
   const { sold_copies, a_copy_amount } = bookStats;
 
   const [copied, setCopied] = useState(false);
@@ -134,7 +143,9 @@ export default function BookHerosection({ bookStats }) {
   const textColor = "#012f25";
 
   return (
-    <div className="relative bg-dark-green min-h-screen pb-5 md:pb-[80px] lg:pb-[50px]">
+    <div
+      className={`relative bg-dark-green min-h-screen pb-5 md:pb-[80px] lg:pb-[50px] ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20"} transition-all duration-700 delay-150 ease-in-out `}
+    >
       <div className="relative top-[-15px]">
         <Image
           src="/stolenbig.png"
@@ -197,7 +208,10 @@ export default function BookHerosection({ bookStats }) {
       </div>
 
       {/* STATS */}
-      <div ref={sectionRef} className="w-full px-4 pt-10 md:pt-16">
+      <div
+        ref={sectionRef}
+        className="w-full px-4 pt-10 md:pt-16 transition-all duration-700 delay-150 ease-in-out"
+      >
         <StatsCards
           soldCopies={sectionSoldCopies}
           soldCopiesInPercent={sectionSoldPercent}
@@ -239,7 +253,7 @@ function SoldBooksCounts({ soldCopies, soldCopiesInPercent, cardRef }) {
   return (
     <div
       ref={cardRef}
-      className="font-satoshi bg-white backdrop-blur-md rounded-2xl py-6 px-6 flex flex-col items-center gap-4 w-full md:w-[300px] xl:w-[400px] mx-auto shadow-lg transition-all duration-300 hover:scale-105"
+      className="font-satoshi bg-white backdrop-blur-md rounded-2xl py-6 px-6 flex flex-col items-center gap-4 w-full md:w-[300px] xl:w-[400px] mx-auto shadow-lg transition-all delay-200 duration-300 hover:scale-105"
     >
       <h1 className="text-dark-green font-bold text-[40px] xl:text-[100px] 2xl:text-[120px]">
         {soldCopies}+

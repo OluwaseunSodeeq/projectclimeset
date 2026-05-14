@@ -6,7 +6,7 @@ import useSubscribeContext from "../contexts/useSubscribeContext";
 import { useState } from "react";
 import ImageOptimizer from "./ImageOptimizer";
 
-export default function HerosecRightCard() {
+export default function HerosecRightCard({ loaded }) {
   // Subcsribe form states
   const { email, setEmail, message, isSuccess, loading, handleSubscribe } =
     useSubscribeContext();
@@ -35,7 +35,9 @@ export default function HerosecRightCard() {
   const current = testimonials[index];
 
   return (
-    <div className="relative font-satoshi h-[400px] md:h-[40rem] xl:h-[40rem] w-full md:w-[45%] xl:w-[44rem] 2xl:w-[46rem] xl:rounded-b-[1.2rem]">
+    <div
+      className={`relative font-satoshi h-[400px] md:h-[40rem] xl:h-[40rem] w-full md:w-[45%] xl:w-[44rem] 2xl:w-[46rem] xl:rounded-b-[1.2rem]  ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-all duration-700 delay-200 ease-in-out `}
+    >
       {/* BACKGROUND LAYER (NON-INTERACTIVE) */}
       <div className="hidden md:block absolute inset-0 z-0 rounded-[1.2rem] overflow-hidden pointer-events-none">
         <ImageOptimizer

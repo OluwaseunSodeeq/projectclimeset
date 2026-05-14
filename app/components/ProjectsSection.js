@@ -1,15 +1,30 @@
+"use client";
 import Link from "next/link";
 import Button from "./Button";
 import { RightGradientDashedFadeLine } from "./GradientLines";
 import ProjectCard from "./ProjectCard";
 import { ProjectSliderContainer } from "./ProjectSliderContainer";
 import { PROJECTS } from "../../lib/projectsData";
+import { useState, useEffect } from "react";
 
 export default function ProjectsSection() {
   const projectsDetails = Object.values(PROJECTS);
+
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   return (
     <div className=" pb-15">
-      <div className="flex flex-col gap-y-3.5 pb-5">
+      <div
+        className={`flex flex-col gap-y-3.5 pb-5 ${loaded ? "opacity-100" : "opacity-0"} transition-all duration-700 delay-200 ease-in-out`}
+      >
         {projectsDetails.map((eachProject, index) => {
           return <ProjectCard key={index} eachProject={eachProject} />;
         })}
