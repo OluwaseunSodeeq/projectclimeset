@@ -49,7 +49,7 @@ export default function Header() {
   `}
     >
       <div className="w-full 2xl:max-w-[1400px] md:mx-auto">
-        <div className="flex justify-between items-center px-[1rem] md:px-[3rem] xl:px-[5rem] py-3.5  2xl:px-[7rem]">
+        <div className="flex justify-between items-center px-[1rem] md:px-[3rem] xl:px-[5rem] py-3.5 xl:py-3  2xl:px-[7rem]">
           <div className="block xl:hidden w-[115px] h-[49px] relative">
             <Link href="/">
               <MobileLogo />

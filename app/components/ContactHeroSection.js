@@ -2,6 +2,7 @@
 import { useForm } from "react-hook-form";
 import emailjs from "@emailjs/browser";
 import toast from "react-hot-toast";
+import { useEffect, useState } from "react";
 
 ////////////////// WHATSAPP stuff//////////////
 const phoneNumber = "+2348149428278";
@@ -16,6 +17,16 @@ const whatSappHandler = () => {
 
 //   ====================
 export default function ContactHeroSection() {
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
+
   const {
     register,
     handleSubmit,
@@ -50,7 +61,9 @@ export default function ContactHeroSection() {
   };
 
   return (
-    <section className="font-satoshi relative py-15 md:py-20 px-3 md:px-6 bg-white overflow-hidden">
+    <section
+      className={`font-satoshi relative py-15 md:py-20 px-3 md:px-6 bg-white overflow-hidden ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20"} transition-all duration-700 delay-150 ease-in-out `}
+    >
       <div className="relative max-w-[900px] mx-auto ">
         <div className="relative max-w-[750px] mx-auto text-center mb-16 ">
           <h1 className="lg:w-[80%]text-[30px] md:text-[40px] lg:text-[50px] 2xl:text-[70px] font-bold text-dark-green mx-auto">

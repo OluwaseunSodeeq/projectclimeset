@@ -2,12 +2,22 @@
 import Papa from "papaparse";
 import { useState, useEffect } from "react";
 import Image from "next/image";
+import TeamImage from "./TeamImage";
 
 export default function MeetTheTeamImages() {
   const [showAll, setShowAll] = useState(false);
   const [isMobile, setIsMobile] = useState(false);
   const [selected, setSelected] = useState(null);
   const [team, setTeam] = useState([]);
+  const [loaded, setLoaded] = useState(false);
+
+  useEffect(() => {
+    const timer = setTimeout(() => {
+      setLoaded(true);
+    }, 100);
+
+    return () => clearTimeout(timer);
+  }, []);
 
   useEffect(() => {
     const sheetURL =
@@ -29,11 +39,32 @@ export default function MeetTheTeamImages() {
     window.addEventListener("resize", handleResize);
     return () => window.removeEventListener("resize", handleResize);
   }, []);
-  console.log(team);
   const visibleImages = isMobile ? (showAll ? team : team.slice(0, 5)) : team;
-
+  const validImages = [
+    "abdullateef",
+    "abeedah",
+    "amirah",
+    "animashaun",
+    "ayanfeoluwa",
+    "blessing",
+    "busola",
+    "falilat",
+    "hajaratoyinkansola",
+    "joy",
+    "maryam",
+    "oluwasegun",
+    "oluwaseun",
+    "quam",
+    "rahmotallah",
+    "saidat",
+    "sideeqoh",
+    "sumayyah",
+  ];
+  console.log(team);
   return (
-    <section className="w-full py-12 px-4 md:px-8 lg:px-16 bg-gray-50">
+    <section
+      className={`w-full py-12 px-4 md:px-8 lg:px-16 bg-gray-50 ${loaded ? "opacity-100 translate-y-0" : "opacity-0 -translate-y-20"} transition-all duration-700 delay-150 ease-in-out `}
+    >
       {/* Heading */}
       <div className="text-center mb-10">
         <h2 className="text-2xl md:text-3xl font-bold text-dark-green">
@@ -57,20 +88,28 @@ export default function MeetTheTeamImages() {
             .toLowerCase()
             .replace(" ", "")
             .trim();
-          const imageName = firstName === "saidah" ? "animashaun" : firstName; // Assuming image names are just the first name in lowercase without spaces
+          const imageName = firstName === "saidah" ? "animashaun" : firstName; // Assuming image names are just the first name in lowercase without space
+
+          const imageSrc = validImages.includes(imageName)
+            ? `/teams/${imageName}.png`
+            : "/fallback01.svg";
+
+          console.log(imageSrc);
           return (
             <div
               key={index}
               onClick={() => setSelected(person)}
-              className="relative w-full aspect-square overflow-hidden rounded-md cursor-pointer group"
+              className="relative w-full bg-dark-green aspect-square overflow-hidden rounded-md cursor-pointer group"
             >
-              <Image
-                src={`/teams/${imageName}.png`}
+              <TeamImage imageName={imageSrc} firstName={firstName} />
+              {/* <Image
+                // src={`/teams/${imageName}.png`}
+                src={`/teams/${imageName}.png | /white-logo.png`}
                 alt={imageName}
                 fill
                 sizes="(max-width: 768px) 100vw, 20vw"
                 className={`object-cover grayscale group-hover:grayscale-0 group-hover:scale-105 transition duration-300 ${person["First Name"] === "Saidah" ? "object-top" : "object-center"}`}
-              />
+              /> */}
 
               {/* Overlay on hover */}
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition flex items-center justify-center">

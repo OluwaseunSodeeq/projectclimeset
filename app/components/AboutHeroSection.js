@@ -22,7 +22,7 @@ export default function AboutHeroSection() {
   ];
   return (
     <div
-      className={`w-full flex flex-col gap-16 px-4 lg:px-0 py-8.5 font-satoshi ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-all duration-700 delay-200 ease-in-out `}
+      className={`w-full flex flex-col gap-16 px-4 lg:px-6 py-8.5 font-satoshi ${loaded ? "opacity-100 translate-x-0" : "opacity-0 translate-x-10"} transition-all duration-700 delay-200 ease-in-out `}
     >
       <div className="w-full bg-white overflow-hidden ">
         {/* <div className="relative 80-full h-72 md:h-[420px] xl:h-[650px] 2xl:h-[860px]"> */}
